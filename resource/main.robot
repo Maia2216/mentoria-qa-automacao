@@ -1,8 +1,18 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Resource    ../resource/pages/loginPage.robot
-Resource    ../resource/pages/produtosPage.robot
-Resource    ../resource/pages/carrinhoPage.robot
-Resource    ../resource/variable.robot
-Resource    ../resource/navegador.robot
+# Keywords Procedural
+Resource    pages/loginPage.robot
+Resource    pages/produtosPage.robot
+Resource    pages/checkoutPage.robot
+
+# Keywords Gherkin
+Resource    ../resource/pages_gherkin/loginPage_Gherkin.robot
+Resource    ../resource/pages_gherkin/produtosPage_Gherkin.robot
+Resource    ../resource/pages_gherkin/checkoutPage_Gherkin.robot
+
+# Variables
+Resource    variable.robot
+
+# Navegador
+Resource    navegador.robot

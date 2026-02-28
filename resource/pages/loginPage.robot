@@ -1,12 +1,17 @@
+
 *** Settings ***
-Resource    ../../resource/main.robot
+Library     SeleniumLibrary
+Resource    ../variable.robot
 
 *** Keywords ***
-Dado que estou na página de login
+Acessar a página de login
     Go To    ${URL}
-Quando eu preencher o usuario e senha
+    
+Preencher o usuario e senha
+    Wait Until Element Is Visible    ${LOGIN_USER_INPUT}   15s
     Input Text         ${LOGIN_USER_INPUT}    ${USER}
     Input Password     ${LOGIN_PASS_INPUT}    ${PASS}
     Click Button       ${LOGIN_BTN}
-Então devo acessar o sistema com sucesso
-    Fechar Navegador
+
+Validar acesso ao site
+    Wait Until Element Is Visible    ${INVENTORY_LIST}   15s
